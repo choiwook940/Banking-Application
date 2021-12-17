@@ -1,0 +1,227 @@
+/* common */
+body {position: relative;font-family: 'Nanum Gothic', sans-serif;font-size: 14px;}
+.wrapper {background-color: rgba(238, 235, 229, 1); overflow: hidden;}
+.btn {padding: 0;outline: none;border: none;}
+a {color: rgba(0, 0, 0, 1);}
+.btn span {
+  position: absolute; 
+  clip: rect(0 0 0 0); 
+  /* width: 1px;  */
+  /* height: 1px;  */
+  /* margin: -1px;  */
+  /* overflow: hidden; */
+}
+
+header {display: flex;justify-content:space-between;align-items: center;padding: 56px 24px 0;}
+header a {display: block;border-radius: 50%;overflow: hidden;}
+header a img {width: 43px;height: 43px;vertical-align: top;}
+header h1 {font-weight: 700;font-size: 18px;}
+header .btn-cont > .btn {vertical-align: middle;}
+header .btn-cont .btn-search {margin-left: 15px;}
+
+.account-section {height: 254px;}
+.account-section .account-cont {  
+  background-color: rgba(255, 255, 255, 1);
+  width: 279px;
+  margin: 33px auto 0;
+  border-radius: 12px;
+  height: 155px;
+  box-shadow:1px 2px 10px rgba(222, 222, 222, 1);
+  text-align: center;
+  position: relative;
+  padding: 17px 17px 8px;
+  box-sizing: border-box;
+  font-weight: 700;
+}
+
+.account-section .account-cont strong {
+  display: block;
+}
+.account-section .account-cont .account-num {
+  color: rgba(133, 133, 133, 1);
+}
+.account-section .account-cont .account-money strong {
+  font-size: 22px;
+  margin-top: 27px;
+  display: inline-block;
+}
+.account-section .account-cont .btn-send {
+  position:absolute;
+  top:14px;
+  right: 17px;
+  font-weight: 700;
+  background-color: transparent;
+}
+.account-section .progress-cont {
+  margin: 25px 0 15px;
+  padding-left:15px;
+}
+.account-section .progress-cont .bar {
+  height: 5px;
+  background-color: rgba(196, 196, 196, 1);
+  border-radius: 4px;
+  margin-right: 28px;
+  position:relative;
+}
+.account-section .progress-cont .bar .progress {
+  width: 50%;
+  height: 5px;
+  background-color: rgba(255, 219, 76, 1);  
+  position:relative;
+}
+.account-section .progress-cont .bar .progress::after {
+  content: "";
+  width: 4px;
+  height: 18px;
+  background-color: tomato;
+  border: 2px solid white;
+  border-radius: 4px;
+  position: absolute;
+  right: 0;
+  top:50%;
+  transform: translateY(-50%);
+}
+.account-section .progress-cont .btn-manage {
+  background-color: transparent;
+  float: right;
+  margin-top: -13px;
+}
+.account-section .account-cont > span:last-child {
+  color: rgba(133, 133, 133, 1);
+  font-weight: 700;
+}
+.account-section aside {
+  width: 279px;
+  margin: 0 auto;
+  margin-top: 26px;
+  font-weight: 700;
+}
+
+.spend-section {
+  background-color: rgba(245, 245, 245, 1);
+  /* height: 100%; */
+  border-radius: 30px 30px 0 0 ;
+  padding: 25px 30px;
+  position: relative;
+}
+.spend-section .dragbar {
+  position: absolute;
+  top:4px;
+  right: 0;
+  left: 0;
+  margin:0 auto;
+  background-color: rgba(196, 196, 196, 1);
+  width: 48px;
+  height: 2.2px;
+  border-radius: 2px;
+}
+
+/* save-cont */
+.spend-section .save-cont {
+    border:1px solid red;
+    width: 100%;
+    display: flex;
+    gap: 13px;
+    overflow: hidden;
+  }
+  .save-cont .save-list {
+    border:1px solid blue;  
+    display: flex;
+    gap: 13px;
+  }
+  .save-cont .save-bar {
+    width: 162px;
+    height: 47px;
+    border-radius: 7px;
+    background-color: rgba(218, 218, 218, 1);
+    overflow: hidden;
+    position:relative;
+  }
+  .save-cont .save-bar .save-progress {
+    width: 80%;
+    height: 47px;
+    background-color: rgba(255, 95, 0, 1);
+  }
+  .save-cont .save-bar .save-name,
+  .save-cont .save-bar .save-money {  
+    position: absolute;
+    color: white;
+    font-size: 12px;
+    top:8px;
+    left: 14px;
+  }
+  .save-cont .save-bar .save-money {
+    top:26px;
+  }
+  .save-cont .save-add {
+    width: 162px;
+    height: 47px;
+    display: flex;
+    align-items: center;
+    border-radius: 7px;
+    box-shadow:1px 2px 10px rgba(222, 222, 222, 1);
+  }
+  .save-cont .save-add .btn-add {
+    display: flex;
+    align-items: center;
+    color: rgba(255, 95, 0, 1);
+    font-weight: 700;
+    background-color: transparent;
+  }
+  .save-cont .save-add .btn-add .material-icons {
+  margin-right: 6px;
+  }
+/* day-cont */
+.spend-section .day-cont {
+}
+  .day-cont .day-list {
+    margin-bottom:18px; 
+    padding-top:18px;
+  }
+  .day-cont .day {
+    font-weight: 700;
+  }
+  .day-cont .total {
+    float: right;
+    font-weight: 700;
+    color: rgba(180, 180, 180, 1);  
+  }
+  .day-cont .spend-cont {
+    margin-top: 3px;
+  }
+  .day-cont .spend-cont .spend-list {
+    font-size: 18px;
+    border-bottom: 1px solid rgba(220, 220, 220, 1);
+    height: 33px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  /* .day-cont .spend-cont .spend-list .spend-title {}
+  .day-cont .spend-cont .spend-list .spend-cost {} */
+
+
+nav {
+  background: linear-gradient(163.63deg, #00BDB2 11.35%, #C4E7B8 139.96%);
+  position:fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 76px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+nav .btn {
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+}
+nav .active svg {
+  fill: rgba(0, 95, 89, 1);
+}
+nav svg {
+  fill: #EEECE5;
+}

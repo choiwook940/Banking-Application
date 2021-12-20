@@ -1,6 +1,6 @@
 /* common */
 body {position: relative;font-family: 'Nanum Gothic', sans-serif;font-size: 14px;}
-.kind_wrap {background-color: rgba(238, 235, 229, 1); overflow: hidden;}
+.wrapper {background-color: rgba(238, 235, 229, 1); overflow: hidden;}
 .btn {padding: 0;outline: none;border: none;}
 a {color: rgba(0, 0, 0, 1);}
 .btn span {
@@ -11,10 +11,8 @@ a {color: rgba(0, 0, 0, 1);}
   /* margin: -1px;  */
   /* overflow: hidden; */
 }
-.kind_wrap > .kind_slider .slider {position: relative;}
-.kind_wrap > .kind_slider .slider .account {float:left; width: 100vw; }
-.kind_wrap .arrow > a.prev {position: absolute; left:0px; top:100px;}
-.kind_wrap .arrow > a.next {position: absolute; right:0px; top:100px; }
+.wrapper .slider {position: relative; transition: transform 0.3s ease-out}
+.wrapper .slider .account {float:left; width: 100vw; outline: 1px solid rgba(218, 215, 209, 1);}
 
 header {display: flex;justify-content:space-between;align-items: center;padding: 56px 24px 0;}
 header a {display: block;border-radius: 50%;overflow: hidden;}
@@ -111,7 +109,7 @@ header .btn-cont .btn-search {margin-left: 15px;}
   margin: 0 auto;
 }
 
-.kind_slider .slider .account {position: relative; height: 100vh;}
+.wrapper .slider .account {position: relative; height: 100vh;}
 .spend-section {
   background-color: rgba(245, 245, 245, 1);
   border-radius: 30px 30px 0 0 ;
@@ -212,9 +210,6 @@ header .btn-cont .btn-search {margin-left: 15px;}
     justify-content: space-between;
     align-items: center;
   }
-  /* .day-cont .spend-cont .spend-list .spend-title {}
-  .day-cont .spend-cont .spend-list .spend-cost {} */
-
 
 nav {
   background: linear-gradient(163.63deg, #00BDB2 11.35%, #C4E7B8 139.96%);

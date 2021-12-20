@@ -18,3 +18,14 @@ btnArrow.addEventListener("click", () => {console.log("btnArrow")})
 btnMessage.addEventListener("click", () => {console.log("btnMessage")})
 btnMore.addEventListener("click", () => {console.log("btnMore")})
 
+const getDate = () => {
+  fetch(`https://gist.githubusercontent.com/himchan94/a539fd8c884477a314044e8b423b9653/raw/4703f3ad54d707c1baec154783d3f1f382671d5a/myAccount.json`)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+    })
+    .catch(error => {
+      console.error(error);
+    })
+}
+

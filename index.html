@@ -18,8 +18,9 @@
     <script defer src="./js/main.js"></script>
     <script defer src="./js/getData.js"></script>
     <script defer src="./js/renderAccount.js"></script>
-    <script defer src="./js/renderAccountData.js"></script>
-    <script defer src="./js/slider.js"></script>
+    <script src="./js/renderAccountData.js"></script>
+    <script src="./js/slider.js"></script>
+    <!-- <script src="./js/dataChart.js"></script> -->
   </head>
   <body>
     <div class="wrapper">
@@ -64,27 +65,26 @@
           'grandmotherAccount'
         ]
         // Get and Render Account-data 
-        accountList.forEach(account => {
-          getData(`${account}`)
-          .then(json => {
-            renderAccount(`${json.account}`)
-            renderData(json)
-
-            sliderForAccount('.slider')
+        const getAndRender = () => {
+          return new Promise(resolve => {
+            accountList.forEach((account, index) => {
+              getData(`${account}`)
+              .then(json => {
+                renderAccount(`${json.account}`)
+                renderData(json)
+                console.log(`rendering ${ index + 1 }`)
+                if(index === accountList.length - 1) resolve();
+              })
+            })
           })
-          .then(json => {
-            // console.log(json.account)
-            mainFunction()
-
-          })
-          
-          // renderAccount(`${account}`)
-          
+        }
+        getAndRender()
+        .then(result => {
+          console.log("render finish")
+          sliderForAccount('.slider')
+          mainFunction()
+          // renderChart()
         })
-        // Get sliders
-        
-        // sliderForSavings('.save-slider')
-        //
       }
     </script>
   </body>

@@ -1,7 +1,8 @@
-window.sliderForAccount = function(target) {
+const sliderForAccount = (target) => {
   // Variable set
   const slider = document.querySelector(`${target}`)
-  const slideLis = Array.from(slider.children)
+  const slideLis = slider.querySelectorAll('.account')
+
   let isDragging = false,
     startPos = 0,
     currrentTranslate = 0,
@@ -27,7 +28,6 @@ window.sliderForAccount = function(target) {
   })
   window.oncontextmenu = function(event) {
     event.preventDefault()
-    event.stopPropagation()
     return false
   }
   function touchStart(index) {
@@ -76,11 +76,16 @@ window.sliderForAccount = function(target) {
     // Spend Board dragbar
     const sliderForSpend = (target) => {
       const currentAccount = document.querySelector(`.${target}`)
+      // console.log(currentAccount)
       const spendDrag = currentAccount.querySelector(`.dragbar`)
       const spendSection = currentAccount.querySelector('.spend-section')
   
       spendDrag.addEventListener('dragstart', (e) => e.preventDefault())
-      spendDrag.addEventListener('touchstart', touchStart)
+      spendDrag.addEventListener('touchstart', (e) => {
+        // 중첩 기능 방지
+        // e.stopPropagation()
+        touchStart
+      })
       spendDrag.addEventListener('touchend', touchEnd)
       spendDrag.addEventListener('touchmove', touchMove)
       spendDrag.addEventListener('mousedown', touchStart)
@@ -88,7 +93,8 @@ window.sliderForAccount = function(target) {
       spendDrag.addEventListener('mouseleave', touchEnd)
       spendDrag.addEventListener('mousemove', touchMove)
       
-      function touchStart() {
+      function touchStart(event) {
+        // event.stopPropagation()
         spendSection.classList.toggle('active')
         spendSection.style.transition = "all 0.5s"; 
       }
@@ -130,7 +136,6 @@ const sliderForSavings = (target) => {
   })
   window.oncontextmenu = function(event) {
     event.preventDefault()
-    event.stopPropagation()
     return false
   }
   function touchStart(index) {

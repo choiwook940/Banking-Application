@@ -1,6 +1,7 @@
 window.renderAccount = (accountName) => {
-    const accountSlider = document.querySelector('.slider')
-    accountSlider.insertAdjacentHTML('beforeend', `
+  const accountSlider = document.querySelector('.slider')
+  // Render Account-page
+  accountSlider.insertAdjacentHTML('beforeend', `
     <div class="account ${accountName}">
     <!-- 헤더 -->
     <header>
@@ -37,9 +38,84 @@ window.renderAccount = (accountName) => {
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path d="M0 4.2H3V14H0V4.2ZM5.6 0H8.4V14H5.6V0ZM11.2 8H14V14H11.2V8Z" fill="black"/>
             </svg>
+          </button>
+          <div class="manage-table">
+            <h2>지출 관리</h2>
+            <div class="manage-limit">
+              <h3>기준금액 설정</h3>
+              <span></span>
+            </div>
+            <div class="manage-report">
+              <h3>일간 리포트</h3>
+              <canvas class="report-chart" width="100%"></canvas>
+            </div>
+            <div class="manage-pattern">
+              <h3>6월 지출 패턴</h3>
+            </div>
+            
+            
+            
+            <button class="btn btn-manage-close">닫기</button>
+          </div>
         </div>
         <span class="account-desc"></span>
         <button class="btn btn-send">이체</button>
+      </div>
+      <!-- 이체 섹션 -->
+      <div class="send-table">
+        <h2>이체</h2>
+        <button class="btn btn-send-enter">직접입력</button>
+        <ul class="recipients">
+          <li class="recipient">
+            <img src="./image/profile.jpg" alt="프로필 이미지" />
+            <div class="recipient-data">
+              <strong class="recipient-name">정을수</strong>
+              <span class="recipient-account">신한 112048393002</span>
+            </div>
+            <span class="material-icons">star_border</span>
+          </li>
+          <li class="recipient">
+            <img src="./image/profile.jpg" alt="프로필 이미지" />
+            <div class="recipient-data">
+              <strong class="recipient-name">정을수</strong>
+              <span class="recipient-account">신한 112048393002</span>
+            </div>
+            <span class="material-icons">star_border</span>
+          </li>
+          <li class="recipient">
+            <img src="./image/profile.jpg" alt="프로필 이미지" />
+            <div class="recipient-data">
+              <strong class="recipient-name">정을수</strong>
+              <span class="recipient-account">신한 112048393002</span>
+            </div>
+            <span class="material-icons">star_border</span>
+          </li>          
+          <li class="recipient">
+            <img src="./image/profile.jpg" alt="프로필 이미지" />
+            <div class="recipient-data">
+              <strong class="recipient-name">정을수</strong>
+              <span class="recipient-account">신한 112048393002</span>
+            </div>
+            <span class="material-icons">star_border</span>
+          </li>
+          <li class="recipient">
+            <img src="./image/profile.jpg" alt="프로필 이미지" />
+            <div class="recipient-data">
+              <strong class="recipient-name">정을수</strong>
+              <span class="recipient-account">신한 112048393002</span>
+            </div>
+            <span class="material-icons">star_border</span>
+          </li>
+          <li class="recipient">
+            <img src="./image/profile.jpg" alt="프로필 이미지" />
+            <div class="recipient-data">
+              <strong class="recipient-name">정을수</strong>
+              <span class="recipient-account">신한 112048393002</span>
+            </div>
+            <span class="material-icons">star_border</span>
+          </li>
+        </ul>
+        <button class="btn btn-send-cancel">취소</button>
       </div>
       <aside>
         <span>지금 낮은 이자로 생활대출을 신청하세요!</span>
@@ -77,3 +153,5 @@ window.renderAccount = (accountName) => {
     </div>
   `)
 }
+
+

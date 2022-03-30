@@ -168,9 +168,7 @@ header .btn-cont .btn-search {margin-left: 15px;}
     position:relative;
   }
   .save-cont .save-bar .save-progress {
-    width: 10%;
     height: 47px;
-    background-color: rgba(255, 95, 0, 1);
   }
   .save-cont .save-bar .save-name,
   .save-cont .save-bar .save-money {  
@@ -270,4 +268,119 @@ nav .active svg {
 }
 nav svg {
   fill: #EEECE5;
+}
+
+
+/* Send-Table */
+.send-table {
+  position:fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #ffffff;
+  padding: 29px;
+  height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  transition: transform 0.5s;
+  /* display: block; */
+  transform: translateY(100%);
+  z-index: 1;
+}
+.send-table.show {
+  transform: translateX(0);
+}
+.send-table.show h2 {
+  font-weight: 700;
+  font-size: 24px;
+  margin: 30px 0 ;
+}
+.send-table.show .btn-send-enter {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #858585;
+  border-radius: 4px;
+  background-color: transparent;
+}
+.send-table.show .recipients {
+  margin-top: 40px;
+}
+.send-table.show .recipient {
+  overflow: hidden;
+  margin-top: 20px; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.send-table.show .recipients img {
+  display: block;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.send-table.show .recipient-data {
+  width: 100%;
+}
+.send-table.show .recipient-name {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 18px;
+}
+.send-table.show .recipient-account {
+  color: #444444;
+  font-size: 16px;
+}
+.send-table.show .recipients .material-icons {
+  color: #FFDB4C;
+  font-size: 24px;
+}
+.send-table.show .btn-send-cancel {
+  position: absolute;
+  top: 10px; 
+  right: 10px;
+  padding:5px;
+  background-color: transparent;
+}
+
+
+/* Manage-Table */
+.manage-table {
+  position:fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #ffffff;
+  padding: 29px;
+  height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  transition: transform 0.5s;
+  /* display: block; */
+  transform: translateY(100%);
+  z-index: 1;
+}
+.manage-table.show {
+  transform: translateX(0);
+}
+.manage-table.show h2 {
+  font-weight: 700;
+  font-size: 24px;
+  margin: 30px 0 ;
+  text-align: left;
+}
+.manage-table.show h3 {
+  text-align: left;
+  font-size: 18px;
+  color: #444444;
+}
+.manage-table.show .btn-manage-close {
+  position: absolute;
+  top: 10px; 
+  right: 10px;
+  padding:5px;
+  background-color: transparent;
+}
+.manage-table.show div + div {
+  margin-top: 50px;
 }
